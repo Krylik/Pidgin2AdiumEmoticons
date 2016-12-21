@@ -9,11 +9,11 @@ argparser = argparse.ArgumentParser()
 argparser.add_argument('indir',
                        metavar='input',
                        type=str,
-                       description="The directory containing the pidgin emotes")
+                       help="The directory containing the pidgin emotes")
 argparser.add_argument('outdir',
                        metavar='output',
                        type=str,
-                       description="The output directory name, this will have .AdiumEmoticonSet appended to the name")
+                       help="The output directory name, this will have .AdiumEmoticonSet appended to the name")
 args = argparser.parse_args()
 
 copytree(args.indir, args.outdir, ignore=ignore_patterns('theme', '.git*', '*.gz'))
