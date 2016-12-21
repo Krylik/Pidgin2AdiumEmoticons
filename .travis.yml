@@ -1,10 +1,20 @@
 language: python
 python:
-  - "2.7"
+- '2.7'
 before_script:
-  - wget https://github.com/Berach/BERACHS_COMPLETE_PIDGIN/archive/master.zip -O /tmp/berach_pidgin.tar.gz
-  - tar -xf /tmp/berach_pidgin.tar.gz
+- wget https://github.com/Berach/BERACHS_COMPLETE_PIDGIN/archive/master.zip -O /tmp/berach_pidgin.tar.gz
+- tar -xf /tmp/berach_pidgin.tar.gz
 script:
-  - python emoticonset_builder ./BERACHS_COMPLETE_PIDGIN-master ./Berach_Complete_Adium.AdiumEmoticonSet
+- python emoticonset_builder ./BERACHS_COMPLETE_PIDGIN-master ./Berach_Complete_Adium.AdiumEmoticonSet
 after_script:
-  - tar -czf Berach_Complete_Adium.tar.gz Berach_Complete_Adium.AdiumEmoticonSet
+- tar -czf Berach_Complete_Adium.tar.gz Berach_Complete_Adium.AdiumEmoticonSet
+deploy:
+  provider: releases
+  api_key:
+    secure: lN2xCsC83OSgdEL9pPSAMJe5qK0DLbfD/RQMzQKviwczfi+jGk7s2zKS/UiN4x3b/8JXEXLZXQShx0o2H7krbFzrC4ROOtVafyTHcnKM8rM0AyZXdxTnQc21zMYdoDAH0dqrXPddHgNdBRSOwwpqTG61CS6GNHw4zDcd2jofN3ByVS0GOpUhz1S6NrJ6dVoCqHDNlR8REdJA0i/9tAFcH4O2EZrgbqc0I2SxRcabyZU2rtP/qqYzYkDEiVJhXps16D2gN4fo9abjZMQnNjLDJtgVitHYR61mWiy0tzYPz2MM8hk5KVmfslfpAp08BCaf5acDAzuiElHSBDCLoiIgAMIEPPRLoZHjB2bPUUTvPZcK7S7Z662flP/krsrNiokTxETCyCKXBzG7NBL63eKsOoOoHIAc6YdlCKYkFZYUhJfMowGBEQomySKl2cTYFAm0Rhdq2AtbnwLthMWVXZAzWtP3gGY0j79ZcdPs8OUaRg0NszOCzsatYl7jDNr/7Zg4ZYL1r3eAWETq/Dq2KdhpjA4WXDQIdg17R7lux1EvnTXoaz7HY75uJUzSfzYNBeWVTi3JV1whg/s0h4d1sDnaLgqdtL2u4s8Pi8xYb4YjQJM476RIkYAul0Uy9D5wOuohTTtumbqZbl8sNxe4KXMpzL34K5CAeHlkQErBpveDpbM=
+  file: Berach_Complete_Adium.tar.gz
+  on:
+    repo: Krylik/Pidgin2AdiumEmoticons
+  skip_cleanup: true
+  on:
+    tags: true
