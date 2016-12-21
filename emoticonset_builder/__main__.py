@@ -28,7 +28,7 @@ with open('%s/theme' % args.indir) as themefile:
             emoticons.append((img, triggers))
 
 # Build plist file from template
-tree = ET.parse('emoticonpack_builder/template.plist')
+tree = ET.parse('emoticonset_builder/template.plist')
 plist = tree.getroot()
 plist_root_dict = plist.find('dict')
 emote_dict = ET.SubElement(plist_root_dict, 'dict')
