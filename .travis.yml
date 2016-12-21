@@ -2,8 +2,8 @@ language: python
 python:
 - '2.7'
 before_script:
-- wget https://github.com/Berach/BERACHS_COMPLETE_PIDGIN/archive/master.zip -O /tmp/berach_pidgin.tar.gz
-- tar -xf /tmp/berach_pidgin.tar.gz
+- wget https://github.com/Berach/BERACHS_COMPLETE_PIDGIN/archive/master.zip -O /tmp/berach_pidgin.zip
+- unzip -q /tmp/berach_pidgin.zip
 script:
 - python emoticonset_builder ./BERACHS_COMPLETE_PIDGIN-master ./Berach_Complete_Adium.AdiumEmoticonSet
 after_script:
