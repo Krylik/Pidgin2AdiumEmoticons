@@ -1,0 +1,10 @@
+language: python
+python:
+  - "2.7"
+before_script:
+  - wget https://github.com/Berach/BERACHS_COMPLETE_PIDGIN/archive/master.zip -O /tmp/berach_pidgin.tar.gz
+  - tar -xf /tmp/berach_pidgin.tar.gz
+script:
+  - python emoticonset_builder ./BERACHS_COMPLETE_PIDGIN-master ./Berach_Complete_Adium.AdiumEmoticonSet
+after_script:
+  - tar -czf Berach_Complete_Adium.tar.gz Berach_Complete_Adium.AdiumEmoticonSet
