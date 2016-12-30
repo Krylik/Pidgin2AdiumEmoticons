@@ -7,5 +7,6 @@ Usage:
 ```python emoticonpack_builder path_to_pidgin_folder name_of_adium_emoticonset```
 
 #### Changelog
-* 21/12/2016 - Initial Build
+* 0.0.5 - Initial Build
+* 0.0.6 - Corrected case sensitivity issues
 
